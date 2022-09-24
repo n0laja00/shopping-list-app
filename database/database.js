@@ -2,7 +2,7 @@ import { Pool } from "https://deno.land/x/postgres@v0.16.1/mod.ts";
 
 /*database connection with a connection pool
 */
-const CONCURRENT_CONNECTIONS = 1;
+const CONCURRENT_CONNECTIONS = 2;
 let connectionPool;
   connectionPool = new Pool({
     hostname: "mouse.db.elephantsql.com",
