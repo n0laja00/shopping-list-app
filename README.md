@@ -1,5 +1,9 @@
 # shopping-list-app
 
+Author: n0laja00
+
+I'm using javascript with eta, a javascript template engine. Visit eta's official site at: https://eta.js.org/ if you're interested!
+
 Deno is the runtime I use to run this web application. Deno can be installed from the Deno installation site: https://deno.land/manual@v1.25.4/getting_started/installation
 
 for windows users, use powershell and run ```irm https://deno.land/install.ps1 | iex``` on powershell. 
