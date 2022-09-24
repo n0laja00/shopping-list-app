@@ -2,7 +2,7 @@ import { Pool } from "https://deno.land/x/postgres@v0.16.1/mod.ts";
 
 /*database connection with a connection pool
 */
-const CONCURRENT_CONNECTIONS = 10;
+const CONCURRENT_CONNECTIONS = 2;
 let connectionPool;
 if (Deno.env.get("postgres://xfjqxwwj:I6I229x0F1giLJ9zcXKa7cBYewxjBGdb@mouse.db.elephantsql.com/xfjqxwwj")) {
   connectionPool = new Pool(Deno.env.get("postgres://xfjqxwwj:I6I229x0F1giLJ9zcXKa7cBYewxjBGdb@mouse.db.elephantsql.com/xfjqxwwj"), CONCURRENT_CONNECTIONS);
