@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shared shopping list!</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Janne Lammela n0laja00">
+  </head>
+  <body>
+    <%~ it.body %>
+  </body>
+</html>

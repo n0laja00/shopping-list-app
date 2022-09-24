@@ -1,0 +1,40 @@
+<% layout("./layouts/layout.eta") %>
+
+<h1>Here are your shopping lists</h1>
+
+<h2>Would you like to add a shopping list?</h2>
+
+<form method="POST">
+    <input type="text" name="name" /> 
+    <input type="submit" value="Add!" />
+</form>
+<%if (it.lists && it.lists.length) {%>
+<%it.lists.sort((a , b) => {return (a.active === b.active)? 0 : b.active? 1 : -1;})%>
+<ul>
+    <% it.lists.forEach((list) => { %>
+        <%if (!list.active) {%>
+            <li style="color:red;padding: 5px;">
+                <a style="color:inherit;" href="/lists/<%= list.id %>/items"><%= list.name %></a>
+                <div>Status: This list is inactive!</div>
+                <form action="/lists/<%= list.id %>/deactivate" method="POST" > 
+                    <input type="submit" value="Activate again!" />
+                 </form>  
+                 <form action="/lists/<%= list.id %>/delete" method="POST" > 
+                    <input type="submit" value="Delete deactive list!" />
+                 </form>
+            </li>
+        <%} else {%>
+            <li style="color:green;padding:5px;">
+                <a style="color:inherit;" href="/lists/<%= list.id %>/items"><%= list.name %></a>
+                <div>Status: This list is active!</div>
+                <form action="/lists/<%= list.id %>/deactivate" method="POST" > 
+                    <input type="submit" value="Deactivate list!" />
+                </form>  
+            </li>
+        <%}%>
+
+    <% }); %>
+</ul>
+<% } else { %>
+    <p>You have no lists.</p>
+<%}%>
