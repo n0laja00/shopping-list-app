@@ -4,17 +4,15 @@ import { Pool } from "https://deno.land/x/postgres@v0.16.1/mod.ts";
 */
 const CONCURRENT_CONNECTIONS = 2;
 let connectionPool;
-if (Deno.env.get("postgres://xfjqxwwj:I6I229x0F1giLJ9zcXKa7cBYewxjBGdb@mouse.db.elephantsql.com/xfjqxwwj")) {
-  connectionPool = new Pool(Deno.env.get("postgres://xfjqxwwj:I6I229x0F1giLJ9zcXKa7cBYewxjBGdb@mouse.db.elephantsql.com/xfjqxwwj"), CONCURRENT_CONNECTIONS);
-} else {
   connectionPool = new Pool({
-    hostname: "abul.db.elephantsql.com",
-    database: "azfwpsim",
-    user: "azfwpsim",
-    password: "hQjrUnEmJTzZKEIBKXyyoDgrzst2KkiQ",
+    hostname: "mouse.db.elephantsql.com",
+    database: "xfjqxwwj",
+    user: "xfjqxwwj",
+    password: "I6I229x0F1giLJ9zcXKa7cBYewxjBGdb",
     port: 5432,
   }, CONCURRENT_CONNECTIONS);
-}
+
+
 /*Execute query with error catching.
 */
   const executeQuery = async (query, params) => {
