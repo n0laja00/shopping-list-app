@@ -17,7 +17,7 @@ const viewListStatistics = async (request) => {
     countLists: await statistics.countLists(),
     countItems: await statistics.countItems(),
   };
-  return new Response(await renderFile("frontView.eta", data), responseDetails);
+  return new Response(await renderFile("frontview.eta", data), responseDetails);
 };
 
 /*Calls function from ../services/shoppingListService that creates a new list.
