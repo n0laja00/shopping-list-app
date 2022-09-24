@@ -1,10 +1,10 @@
 <% layout("./layouts/layout.eta") %>
 <h1>Here's your shared shopping list app!</h1>
 <h2>Statistics</h2>
-<p>Shopping lists: <%=it.countLists[0].count%></p> 
-<p>Shopping item count: <%=it.countItems[0].count%></p> 
-<p>Active lists: <%=it.activeLists[0].count%></p> 
-<p>Uncollected items: <%=it.uncollectedItems[0].count%></p> 
+<p>Shopping lists: <%if (it.countLists && it.countLists.length) {%> <%=it.countLists[0].count%></p> <% } else { %> You have no lists.</p> <%}%>
+<p>Shopping item count: <%if (it.countItems && it.countItems.length) {%> <%=it.countItems[0].count%></p> <% } else { %> You have no items.</p> <%}%>
+<p>Active lists: <%if (it.activeLists && it.activeLists.length) {%> <%=it.activeLists[0].count%></p> <% } else { %> You have no active lists.</p> <%}%>
+<p>Uncollected items: <%if (it.uncollectedItems && it.uncollectedItems.length) {%> <%=it.uncollectedItems[0].count%></p> <% } else { %> You have no uncollected items.</p> <%}%>
 
 <h2>Would you like to inspect your shopping lists?</h2>
 
