@@ -4,8 +4,202 @@
     <title>Shared shopping list!</title>
     <meta charset="UTF-8">
     <meta name="author" content="Janne Lammela n0laja00">
+    <style>
+
+      html{
+        height: 80%;
+      }
+      body {
+        background: rgb(108,110,161);
+        background: linear-gradient(107deg, rgba(108,110,161,1) 0%, rgba(9,9,121,1) 50%, rgba(206,208,237,1) no-repeat center center fixed);
+        -webkit-background-size: cover;
+        
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        
+      }
+
+
+      h1 {
+        color: #6C6EA1;
+        margin-left: 10%;
+      }
+
+      h2 {
+        color: #6C6EA1;
+        margin-left: 10%;
+      }
+      p {
+        margin-left: 10%;
+      }
+
+      ul {
+        list-style: none;
+      }
+      a:hover {
+        color: #6C6EA1;
+      }
+
+      a {
+        color: inherit;
+      }
+      .arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+      }
+
+      .goBack {
+        text-decoration: none;
+      }
+
+      .left {
+          transform: rotate(135deg);
+          -webkit-transform: rotate(135deg);
+        }
+      .appBody {
+        background-color: #FFFDF7;
+        margin: auto;
+        width: 85%;
+        height: 100%;
+        padding: 2em;
+      }
+      .buttonDelete {
+        background-color: white; 
+        color: black; 
+        border: 2px solid #FFFDF7;
+      }
+
+      .buttonDelete:hover {
+        background-color: #FFFDF7;
+        color: white;
+      }
+
+      .listBox{
+        margin-top: 10px;
+        box-shadow: 3px 3px 3px 3px #d9d8d8;
+        border: 2px solid #d9d8d8;
+        width: 50%;
+        padding:0.5em;
+      }
+
+    .nameField {
+      display: block;
+      width: 45%;
+      height: 1.5em;
+      padding-top: $width/15;
+      color: black;
+      border: none;
+      border-bottom: 2px solid #6C6EA1;
+      background: #FFFDF7;
+      transition: border-bottom 0.5s;
+    }
+
+    input[type=text]:focus{
+      outline: none;
+      border-bottom: 2px solid #A1997C;
+    }
+
+    .collectButton  {
+        background-color: #FFFDF7; 
+        color: black; 
+        border: 2px solid #0b9cec;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .collectButton:hover {
+        background-color: #0b9cec;
+        color: white;
+    }
+
+    .uncollectButton {
+        background-color: #FFFDF7; 
+        color: black; 
+        border: 2px solid #eaab12;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .uncollectButton:hover {
+        background-color: #eaab12;
+        color: white;
+    }
+    .reactivateButton  {
+        background-color: #FFFDF7; 
+        color: black; 
+        border: 2px solid #0b9cec;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .reactivateButton:hover {
+        background-color: #0b9cec;
+        color: white;
+    }
+
+    .activateButton {
+        background-color: #FFFDF7; 
+        color: black; 
+        border: 2px solid #11c83f;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .activateButton:hover {
+        background-color: #11c83f;
+        color: white;
+    }
+
+    input {
+      margin: 2px;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .buttonDelete {
+        background-color: #FFFDF7; 
+        color: black; 
+        border: 2px solid #ec0b11;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .buttonDelete:hover {
+      background-color: #ec0b11;
+      color: white;
+    }
+
+    .redItem {
+      color: red;
+      padding: 5px;
+    }
+
+    .greenItem {
+      color: green;
+      padding: 5px;
+    }
+
+    .viewLists {
+      
+      text-align: center;
+      display: block;
+      margin-left: 20%;
+      margin-right: 20%;
+      padding: 2em;
+      font-size: 1.5em;
+      border: 2px solid #6C6EA1;
+    }
+    </style>
   </head>
   <body>
-    <%~ it.body %>
+    <div class="appBody">
+      <%~ it.body %>
+    <div>
+
   </body>
 </html>

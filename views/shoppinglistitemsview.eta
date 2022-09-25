@@ -1,39 +1,44 @@
-<h1>Here's your desired list, called <%= it.list[0].name %>!</h1>
+<% layout("./layouts/layout.eta") %>
+    <a href="http://localhost:7777/lists" class="goBack"><i class="arrow left"></i>Go back!</a>
+    <h1>Here's your desired list, called <%= it.list[0].name %>!</h1>
 
-<h2>Add items to the shopping list! </h2>
+    <h2>Add items to the shopping list! </h2>
 
-<form method="POST" > 
-    <input type="text" name="name" required="required"/> 
-    <input type="submit" value="Add!" />
-</form>
+    <form method="POST" > 
+        <input style="display: inline-block;" type="text" name="name" required="required" class="nameField"/> 
+        <input style="display: inline-block;" type="submit" value="Add!" />
+    </form>
 
-<%if (it.items && it.items.length) {%>
-<%it.items.sort((a, b) => a.item_name.localeCompare(b.item_name))%>
-<%it.items.sort((a , b) => {return (a.collected === b.collected)? 0 : b.collected? -1 : 1;})%>
-<ul>
-    <% it.items.forEach((item) => { %>
-        <% if (item.collected === true) { %>
-            <li style="color:red;">
-                <div><s> <%= item.item_name %> </div>
-                <div>Collected: In Cart</div></s>
-                <form action="/lists/<%= item.shopping_list_id %>/items/<%= item.id %>/collect" method="POST" > 
-                    <input type="submit" value="Not collected!" />
-                </form>
-                <form action="/lists/<%= item.shopping_list_id %>/items/<%= item.id %>/delete" method="POST" > 
-                    <input type="submit" value="Delete this item!" />
-                </form>
-            </li>
-        <%} else { %> 
-            <li style="color:green;">
-                <%= item.item_name %>   
-                <div>Collected: Not in cart</div>
-                <form action="/lists/<%= item.shopping_list_id %>/items/<%= item.id %>/collect" method="POST" > 
-                    <input type="submit" value="Collected!" />
-                </form>  
-            </li> 
-        <%}%> 
-    <% }); %>
-</ul>
-<% } else { %>
-    <p>You have no items on the list.</p>
-<%}%>
+    <%if (it.items && it.items.length) {%>
+    <%it.items.sort((a, b) => a.item_name.localeCompare(b.item_name))%>
+    <%it.items.sort((a , b) => {return (a.collected === b.collected)? 0 : b.collected? -1 : 1;})%>
+    <ul>
+        <% it.items.forEach((item) => { %>
+            <% if (item.collected === true) { %>
+                <li  class="listBox redItem">
+                    <div><s> <%= item.item_name %></s> </div>
+                    <form style="display: inline-block;"  action="/lists/<%= item.shopping_list_id %>/items/<%= item.id %>/collect" method="POST" > 
+                        <input class="uncollectButton" type="submit" value="Not collected!" />
+                    </form>
+                    <form style="display: inline-block;"  action="/lists/<%= item.shopping_list_id %>/items/<%= item.id %>/delete" method="POST" > 
+                        <input class="buttonDelete" type="submit" value="Delete this item!" />
+                    </form>
+                    <div>Collected: In Cart</div>
+                </li>
+            <%} else { %> 
+                <li class="listBox greenItem"">
+                    <%= item.item_name %>   
+                    <form style="display: inline-block;" action="/lists/<%= item.shopping_list_id %>/items/<%= item.id %>/collect" method="POST" > 
+                        <input class="collectButton" type="submit" value="Collected!" />
+                    </form>  
+                    <div>Collected: Not in cart</div>
+                    
+                </li> 
+            <%}%> 
+        <% }); %>
+    </ul>
+    <% } else { %>
+        <p>You have no items on the list.</p>
+    <%}%>
+
+

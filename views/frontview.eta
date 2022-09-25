@@ -6,6 +6,6 @@
 <p>Active lists: <%if (it.activeLists && it.activeLists.length) {%> <%=it.activeLists[0].count%></p> <% } else { %> You have no active lists.</p> <%}%>
 <p>Uncollected items: <%if (it.uncollectedItems && it.uncollectedItems.length) {%> <%=it.uncollectedItems[0].count%></p> <% } else { %> You have no uncollected items.</p> <%}%>
 
-<h2>Would you like to inspect your shopping lists?</h2>
+<div><h2>Would you like to inspect your shopping lists?</h2></div>
 
-    <a href="/lists">Shopping lists</a>
+    <a class="viewLists" href="/lists">Shopping lists</a>
