@@ -1,6 +1,6 @@
 <% layout("./layouts/layout.eta") %>
 
-<a href="http://localhost:7777" class="goBack"><i class="arrow left"></i>Go back!</a>
+<a href="/" class="goBack"><i class="arrow left"></i>Go back!</a>
 <h1>Here are your shopping lists</h1>
 
 

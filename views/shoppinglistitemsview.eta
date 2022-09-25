@@ -1,5 +1,5 @@
 <% layout("./layouts/layout.eta") %>
-    <a href="http://localhost:7777/lists" class="goBack"><i class="arrow left"></i>Go back!</a>
+    <a href="/lists" class="goBack"><i class="arrow left"></i>Go back!</a>
     <h1>Here's your desired list, called <%= it.list[0].name %>!</h1>
 
     <h2>Add items to the shopping list! </h2>
