@@ -21,7 +21,8 @@ On a successful boot, you'll see the following text:
 ![image](https://user-images.githubusercontent.com/73889850/192109509-13f7c40d-fdcf-4e17-9e82-21dd7ff9e3ad.png)
 
 After this, you should be able to connect to the localhost and see the following screen.
-![image](https://user-images.githubusercontent.com/73889850/192109530-c75ab6ab-95ab-4a70-8186-ad3eae8562eb.png)
+![image](https://user-images.githubusercontent.com/73889850/192142922-37bd0967-e581-4247-9d93-fa02f605baa8.png)
+
 
 
 To see the application in action, visit Heroku at: https://n0laja00-shopping-list-app.herokuapp.com/
